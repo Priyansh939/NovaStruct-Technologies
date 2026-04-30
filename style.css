@@ -66,6 +66,13 @@ border-radius:8px;
 position:relative;
 height:100vh;
 overflow:hidden;
+
+background:
+linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+url("https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg");
+
+background-size:cover;
+background-position:center;
 }
 
 .hero video{
