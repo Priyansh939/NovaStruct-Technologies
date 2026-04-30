@@ -1,6 +1,6 @@
 // script.js
 
-const toggle = document.getElementById("themeToggle");
+const toggle = document.getElementById("themeToggle"); 
 
 toggle.onclick = () => {
 document.body.classList.toggle("dark");
