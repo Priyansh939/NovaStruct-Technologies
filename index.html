@@ -3,39 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NovaStruct Technologies</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
- 
+
+<!-- LOADER -->
+<div id="loader">
+<div class="spinner"></div>
+</div>
+
+<!-- NAVBAR -->
 <header class="navbar">
-<div class="logo">NS</div>
+<div class="logo">
+<svg width="40" height="40" viewBox="0 0 100 100">
+<polygon points="10,90 50,10 90,90" fill="#2563eb"/>
+</svg>
+<span>NovaStruct</span>
+</div>
+
 <nav>
-<a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#about">About</a>
 <a href="#careers">Careers</a>
 <a href="#contact">Contact</a>
-<button id="themeToggle">◐</button>
+<button id="themeToggle">🌙</button>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 
-<!-- Video -->
 <video autoplay muted loop playsinline>
 <source src="assets/video.mp4" type="video/mp4">
 </video>
 
-<!-- Overlay -->
-<div class="overlay">
-<h1>Build Tomorrow Today</h1>
-<p>Engineering bold spaces for a smarter world.</p>
+<div class="overlay reveal">
+<h1>Engineering the Future</h1>
+<p>Smart infrastructure for a smarter world</p>
 <a href="#contact" class="btn">Get Quote</a>
 </div>
 
 </section>
 
-<section class="stats">
+<!-- STATS -->
+<section class="stats reveal">
 <div>
 <h2 class="counter" data-target="240">0</h2>
 <p>Projects</p>
@@ -50,50 +65,101 @@
 </div>
 </section>
 
-<section id="services" class="section">
-<h2>Services</h2>
+<!-- SERVICES -->
+<section id="services" class="section reveal">
+<h2>Our Expertise</h2>
 
 <div class="grid">
+
 <div class="card">
 <img src="assets/img1.jpg">
-<p>Commercial Towers</p>
+<h3>Commercial Towers</h3>
 </div>
 
 <div class="card">
 <img src="assets/img2.jpg">
-<p>Smart Cities</p>
+<h3>Smart Cities</h3>
 </div>
 
 <div class="card">
 <img src="assets/img3.jpg">
-<p>Industrial Plants</p>
+<h3>Industrial Plants</h3>
 </div>
 
 <div class="card">
 <img src="assets/img4.jpg">
-<p>Luxury Residences</p>
+<h3>Luxury Residences</h3>
 </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section about reveal">
+
+<div class="about-content">
+<h2>About NovaStruct</h2>
+<p>
+We build future-ready infrastructure combining engineering excellence,
+AI-driven design, and sustainability.
+</p>
+<p>
+From smart cities to high-performance industrial systems,
+NovaStruct delivers global-scale innovation.
+</p>
+</div>
+
+<div class="about-image">
+<img src="assets/img1.jpg">
 </div>
 
 </section>
 
-<section id="about" class="section">
-<h2>About</h2>
-<p>Future-ready construction powered by innovation.</p>
-</section>
-
-<section id="careers" class="section">
+<!-- CAREERS -->
+<section id="careers" class="section reveal">
 <h2>Careers</h2>
-<p>Join our global engineering team.</p>
+
+<form class="career-form">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+<button type="submit">Apply Now</button>
+</form>
+
 </section>
 
-<section id="contact" class="section">
+<!-- CONTACT -->
+<section id="contact" class="section reveal">
 <h2>Contact</h2>
-<p>hello@novastruct.com</p>
+<p>Email: hello@novastruct.com</p>
 </section>
 
-<footer>
-<p>© 2026 NovaStruct Technologies</p>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-grid">
+
+<div>
+<h3>NovaStruct</h3>
+<p>Engineering the future of infrastructure.</p>
+</div>
+
+<div>
+<h4>Navigation</h4>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#careers">Careers</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>hello@novastruct.com</p>
+</div>
+
+</div>
+
+<p class="copy">© 2026 NovaStruct</p>
 </footer>
 
 <script src="script.js"></script>
