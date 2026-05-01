@@ -36,4 +36,9 @@ entry.target.classList.add("active");
 });
 }); 
 
+const video = document.getElementById("bgVideo");
+
+video.play().catch(() => {
+console.log("Autoplay blocked");
+});
 reveals.forEach(el=>observer.observe(el));
