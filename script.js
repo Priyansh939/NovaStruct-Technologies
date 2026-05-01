@@ -34,6 +34,6 @@ if(entry.isIntersecting){
 entry.target.classList.add("active");
 }
 });
-});
+}); 
 
 reveals.forEach(el=>observer.observe(el));
