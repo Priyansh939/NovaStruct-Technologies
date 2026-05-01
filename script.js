@@ -1,25 +1,39 @@
-// script.js
+// LOADER
+window.onload = () => {
+document.getElementById("loader").style.display = "none";
+};
 
-const toggle = document.getElementById("themeToggle"); 
-
-toggle.onclick = () => {
+// DARK MODE
+document.getElementById("themeToggle").onclick = () => {
 document.body.classList.toggle("dark");
 };
 
-const counters = document.querySelectorAll(".counter");
-
-counters.forEach(counter => {
-let target = +counter.getAttribute("data-target");
+// COUNTER
+document.querySelectorAll(".counter").forEach(counter=>{
+let target = +counter.dataset.target;
 let count = 0;
 
-let update = setInterval(() => {
-count += Math.ceil(target / 80);
+let update = setInterval(()=>{
+count += Math.ceil(target/80);
 
-if(count >= target){
-count = target;
+if(count>=target){
+count=target;
 clearInterval(update);
 }
 
-counter.innerText = count;
-}, 30);
+counter.innerText=count;
+},30);
 });
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+});
+
+reveals.forEach(el=>observer.observe(el));
