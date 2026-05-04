@@ -2,7 +2,7 @@
 window.onload = () => {
   document.getElementById("loader").style.display = "none";
 };
-
+ 
 // DARK MODE
 document.getElementById("themeToggle").onclick = () => {
   document.body.classList.toggle("dark");
