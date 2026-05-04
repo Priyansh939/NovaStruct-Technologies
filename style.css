@@ -1,43 +1,175 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#fff;color:#111}
-body.dark{background:#0b1220;color:#fff}
 
-/* LOADER */
-#loader{position:fixed;inset:0;background:#0b1220;display:flex;justify-content:center;align-items:center;z-index:9999}
-.spinner{width:40px;height:40px;border:4px solid #fff;border-top:4px solid #2563eb;border-radius:50%;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* CONTAINER SYSTEM */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
 
 /* NAVBAR */
-.navbar{position:fixed;width:100%;padding:15px 40px;display:flex;justify-content:space-between;background:#000;color:#fff;z-index:1000}
+.navbar{
+  position:fixed;
+  width:100%;
+  background:#000;
+  color:#fff;
+  z-index:1000;
+}
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 0;
+}
 
 /* HERO */
-.hero{height:100vh;position:relative}
-.hero video{position:absolute;width:100%;height:100%;object-fit:cover}
-.overlay{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;background:rgba(0,0,0,.5)}
-.btn{margin-top:20px;padding:10px 20px;background:#2563eb;color:#fff;border:none}
+.hero{
+  height:100vh;
+  position:relative;
+}
+.hero video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.overlay{
+  position:relative;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  background:rgba(0,0,0,.5);
+}
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#2563eb;
+  border:none;
+  color:#fff;
+}
+
+/* SECTION */
+.section{
+  padding:100px 0;
+}
+.section.light{
+  background:#f4f4f4;
+}
 
 /* STORY */
-.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.story-grid.reverse{direction:rtl}
-.story-grid.reverse *{direction:ltr}
-.story-img img{width:100%;max-width:500px}
+.story-row{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  margin-bottom:80px;
+}
+.story-row.reverse{
+  flex-direction:row-reverse;
+}
+.story-row img{
+  width:100%;
+  max-width:500px;
+  border-radius:10px;
+}
+.text{
+  flex:1;
+}
+.image{
+  flex:1;
+}
 
 /* MARQUEE */
-.marquee{overflow:hidden;background:#0b1220;color:#9fb3ff}
-.track{display:flex;width:max-content;animation:marquee 20s linear infinite}
-.track span{padding:0 40px}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{
+  overflow:hidden;
+  background:#0b1220;
+  color:#9fb3ff;
+}
+.track{
+  display:flex;
+  width:max-content;
+  animation:scroll 20s linear infinite;
+}
+.track span{
+  padding:15px 40px;
+}
+@keyframes scroll{
+  to{transform:translateX(-50%)}
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:space-around;
+}
+.counter{
+  font-size:40px;
+  color:#2563eb;
+}
 
 /* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.card{background:#fff;padding:10px}
-body.dark .card{background:#1e293b}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card img{
+  width:100%;
+  border-radius:10px;
+}
 
 /* FOOTER */
-.footer{background:#020617;color:#fff;padding:40px}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.footer{
+  background:#020617;
+  color:#fff;
+  padding:50px 0;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
 
 /* MODAL */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:.3s}
-.modal.active{opacity:1;pointer-events:auto}
-.modal-content{background:#fff;padding:20px;border-radius:10px;display:flex;flex-direction:column;gap:10px}
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+}
+.modal.active{
+  opacity:1;
+  pointer-events:auto;
+}
+.modal-box{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* LOADER */
+#loader{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+.spinner{
+  width:40px;height:40px;
+  border:4px solid #fff;
+  border-top:4px solid #2563eb;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
