@@ -65,18 +65,25 @@ document.querySelectorAll("[data-tilt]").forEach(card=>{
   });
 });
 
-// STORY SCROLL
+// STORY SCROLL (FIXED)
 const story = document.querySelector(".story");
 const wrapper = document.querySelector(".story-wrapper");
 
 window.addEventListener("scroll", () => {
-  if(!story) return;
+  if (!story || !wrapper) return;
 
   const rect = story.getBoundingClientRect();
-  const scrollProgress = -rect.top / (story.offsetHeight - window.innerHeight);
+
+  const totalScroll = story.offsetHeight - window.innerHeight;
+
+  let progress = -rect.top / totalScroll;
+
+  // ✅ CLAMP VALUE BETWEEN 0 → 1
+  progress = Math.max(0, Math.min(progress, 1));
 
   const panels = wrapper.children.length;
-  const move = scrollProgress * (panels - 1) * 100;
+
+  const move = progress * (panels - 1) * 100;
 
   wrapper.style.transform = `translateX(-${move}%)`;
 });
