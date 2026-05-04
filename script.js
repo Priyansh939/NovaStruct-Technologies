@@ -5,7 +5,7 @@ window.onload = () => {
   setTimeout(()=> loader.style.display="none", 500);
 };
 
-// DARK MODE
+//DARK MODE
 document.getElementById("themeToggle").onclick = () => {
   document.body.classList.toggle("dark");
 };
