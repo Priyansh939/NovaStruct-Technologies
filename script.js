@@ -1,8 +1,3 @@
-// LOADER
-window.onload = () => {
-document.getElementById("loader").style.display = "none";
-};
-
 // DARK MODE
 document.getElementById("themeToggle").onclick = () => {
 document.body.classList.toggle("dark");
@@ -24,21 +19,3 @@ clearInterval(update);
 counter.innerText=count;
 },30);
 });
-
-// SCROLL REVEAL
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("active");
-}
-});
-}); 
-
-const video = document.getElementById("bgVideo");
-
-video.play().catch(() => {
-console.log("Autoplay blocked");
-});
-reveals.forEach(el=>observer.observe(el));
