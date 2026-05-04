@@ -65,25 +65,3 @@ document.querySelectorAll("[data-tilt]").forEach(card=>{
   });
 });
 
-// STORY SCROLL (FIXED)
-const story = document.querySelector(".story");
-const wrapper = document.querySelector(".story-wrapper");
-
-window.addEventListener("scroll", () => {
-  if (!story || !wrapper) return;
-
-  const rect = story.getBoundingClientRect();
-
-  const totalScroll = story.offsetHeight - window.innerHeight;
-
-  let progress = -rect.top / totalScroll;
-
-  // ✅ CLAMP VALUE BETWEEN 0 → 1
-  progress = Math.max(0, Math.min(progress, 1));
-
-  const panels = wrapper.children.length;
-
-  const move = progress * (panels - 1) * 100;
-
-  wrapper.style.transform = `translateX(-${move}%)`;
-});
