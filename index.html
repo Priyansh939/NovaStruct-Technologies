@@ -7,26 +7,19 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body> 
+<body>
 
 <!-- LOADER -->
 <div id="loader"><div class="spinner"></div></div>
 
-<!-- CURSOR HALO -->
+<!-- CURSOR -->
 <div id="cursor"></div>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <svg viewBox="0 0 100 100" width="36" height="36">
-      <defs>
-        <linearGradient id="g" x1="0" x2="1">
-          <stop offset="0%" stop-color="#2563eb"/>
-          <stop offset="100%" stop-color="#06b6d4"/>
-        </linearGradient>
-      </defs>
-      <polygon points="10,85 50,10 90,85" fill="url(#g)"/>
-      <rect x="42" y="45" width="16" height="30" fill="#0b1220"/>
+    <svg viewBox="0 0 100 100" width="36">
+      <polygon points="10,85 50,10 90,85" fill="#2563eb"/>
     </svg>
     <span>NovaStruct</span>
   </div>
@@ -49,18 +42,16 @@
   <div class="overlay">
     <h1 class="reveal">Engineering the Future</h1>
     <p class="reveal">Smart infrastructure for a smarter world</p>
-    <a href="#contact" class="btn reveal">Get Quote</a>
+    <button class="btn reveal" id="quoteBtn">Get Quote</button>
   </div>
 </section>
 
+<!-- STORY -->
 <section class="section story-block reveal">
   <div class="story-grid">
     <div class="story-text">
       <h2>Vision</h2>
-      <p>
-        We design infrastructure that anticipates the future —
-        blending intelligence, sustainability, and human-centric engineering.
-      </p>
+      <p>We design infrastructure that anticipates the future.</p>
     </div>
     <div class="story-img">
       <img src="assets/img1.jpg">
@@ -72,10 +63,7 @@
   <div class="story-grid reverse">
     <div class="story-text">
       <h2>Execution</h2>
-      <p>
-        Precision-driven construction powered by automation,
-        global expertise, and data intelligence.
-      </p>
+      <p>Precision-driven construction powered by automation.</p>
     </div>
     <div class="story-img">
       <img src="assets/img2.jpg">
@@ -87,18 +75,15 @@
   <div class="story-grid">
     <div class="story-text">
       <h2>Impact</h2>
-      <p>
-        Building cities, industries, and ecosystems that redefine
-        modern infrastructure worldwide.
-      </p>
+      <p>Building ecosystems that redefine modern infrastructure.</p>
     </div>
     <div class="story-img">
       <img src="assets/img3.jpg">
     </div>
   </div>
 </section>
-  
-<!-- CLIENT MARQUEE -->
+
+<!-- MARQUEE -->
 <section class="marquee">
   <div class="track">
     <span>ARC CORP</span><span>URBANIX</span><span>SKYGRID</span><span>METRA</span>
@@ -108,59 +93,26 @@
 
 <!-- STATS -->
 <section class="stats">
-  <div class="reveal"><h2 class="counter" data-target="240">0</h2><p>Projects</p></div>
-  <div class="reveal"><h2 class="counter" data-target="32">0</h2><p>Countries</p></div>
-  <div class="reveal"><h2 class="counter" data-target="18">0</h2><p>Awards</p></div>
+  <div><h2 class="counter" data-target="240">0</h2><p>Projects</p></div>
+  <div><h2 class="counter" data-target="32">0</h2><p>Countries</p></div>
+  <div><h2 class="counter" data-target="18">0</h2><p>Awards</p></div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section">
-  <h2 class="reveal">Our Expertise</h2>
-
+  <h2>Our Expertise</h2>
   <div class="grid">
-    <div class="card reveal" data-tilt>
-      <img src="assets/img1.jpg"><h3>Commercial Towers</h3>
-    </div>
-
-    <div class="card reveal" data-tilt>
-      <img src="assets/img2.jpg"><h3>Smart Cities</h3>
-    </div>
-
-    <div class="card reveal" data-tilt>
-      <img src="assets/img3.jpg"><h3>Industrial Plants</h3>
-    </div>
-
-    <div class="card reveal" data-tilt>
-      <img src="assets/img4.jpg"><h3>Luxury Residences</h3>
-    </div>
+    <div class="card"><img src="assets/img1.jpg"><h3>Commercial</h3></div>
+    <div class="card"><img src="assets/img2.jpg"><h3>Smart Cities</h3></div>
+    <div class="card"><img src="assets/img3.jpg"><h3>Industrial</h3></div>
+    <div class="card"><img src="assets/img4.jpg"><h3>Luxury</h3></div>
   </div>
-</section>
-
-<!-- ABOUT (parallax-ready) -->
-<section id="about" class="section about parallax">
-  <div class="reveal">
-    <h2>About NovaStruct</h2>
-    <p>
-      We deliver next-generation infrastructure through precision engineering,
-      sustainable design, and intelligent systems integration.
-    </p>
-  </div>
-</section>
-
-<!-- CAREERS -->
-<section id="careers" class="section">
-  <h2 class="reveal">Careers</h2>
-  <form class="career-form reveal">
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email" required>
-    <button type="submit">Apply Now</button>
-  </form>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <h2 class="reveal">Contact</h2>
-  <p class="reveal">hello@novastruct.com</p>
+  <h2>Contact</h2>
+  <p>hello@novastruct.com</p>
 </section>
 
 <!-- FOOTER -->
@@ -168,23 +120,43 @@
   <div class="footer-grid">
     <div>
       <h3>NovaStruct</h3>
-      <p>Engineering future infrastructure.</p>
+      <p>Engineering future-ready infrastructure.</p>
     </div>
+
     <div>
-      <h4>Navigation</h4>
+      <h4>Links</h4>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
       </ul>
     </div>
+
     <div>
       <h4>Contact</h4>
       <p>hello@novastruct.com</p>
     </div>
+
+    <div>
+      <h4>Newsletter</h4>
+      <input placeholder="Email">
+      <button>Subscribe</button>
+    </div>
   </div>
+
   <p class="copy">© 2026 NovaStruct</p>
 </footer>
+
+<!-- QUOTE MODAL -->
+<div id="quoteModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <h2>Request Quote</h2>
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <textarea placeholder="Project details"></textarea>
+    <button>Submit</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
