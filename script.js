@@ -64,3 +64,19 @@ document.querySelectorAll("[data-tilt]").forEach(card=>{
     card.style.transform = "rotateX(0) rotateY(0) translateY(0)";
   });
 });
+
+// STORY SCROLL
+const story = document.querySelector(".story");
+const wrapper = document.querySelector(".story-wrapper");
+
+window.addEventListener("scroll", () => {
+  if(!story) return;
+
+  const rect = story.getBoundingClientRect();
+  const scrollProgress = -rect.top / (story.offsetHeight - window.innerHeight);
+
+  const panels = wrapper.children.length;
+  const move = scrollProgress * (panels - 1) * 100;
+
+  wrapper.style.transform = `translateX(-${move}%)`;
+});
