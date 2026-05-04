@@ -1,7 +1,9 @@
 // LOADER
-window.onload = () => {
-  document.getElementById("loader").style.display = "none";
-};
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  setTimeout(() => loader.style.display = "none", 400);
+});
 
 // DARK MODE
 document.getElementById("themeToggle").onclick = () => {
@@ -9,17 +11,37 @@ document.getElementById("themeToggle").onclick = () => {
 };
 
 // COUNTER
-document.querySelectorAll(".counter").forEach(c=>{
-  let t=+c.dataset.target,n=0;
-  let i=setInterval(()=>{
-    n+=Math.ceil(t/50);
-    if(n>=t){n=t;clearInterval(i);}
-    c.innerText=n;
-  },30);
+document.querySelectorAll(".counter").forEach(counter => {
+  let target = +counter.dataset.target;
+  let count = 0;
+
+  let update = setInterval(() => {
+    count += Math.ceil(target / 80);
+
+    if (count >= target) {
+      count = target;
+      clearInterval(update);
+    }
+
+    counter.innerText = count;
+  }, 30);
 });
 
-// MODAL
-const modal=document.getElementById("quoteModal");
-document.getElementById("quoteBtn").onclick=()=>modal.classList.add("active");
-document.getElementById("closeModal").onclick=()=>modal.classList.remove("active");
-window.onclick=e=>{if(e.target===modal)modal.classList.remove("active");};
+// SCROLL REVEAL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+// VIDEO AUTOPLAY FIX
+const video = document.getElementById("bgVideo");
+if (video) {
+  video.play().catch(() => {
+    console.log("Autoplay blocked");
+  });
+}
