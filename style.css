@@ -70,3 +70,53 @@ color:#fff;
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s ease}
 .reveal.active{opacity:1;transform:translateY(0)}
+
+/* STORY SECTION */
+.story{
+height:300vh; /* creates scroll space */
+position:relative;
+background:#0b1220;
+color:#fff;
+}
+
+.story-wrapper{
+position:sticky;
+top:0;
+height:100vh;
+display:flex;
+overflow:hidden;
+}
+
+.story-panel{
+min-width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:space-around;
+padding:60px;
+transition:transform 0.6s ease;
+}
+
+.story-text{
+max-width:400px;
+}
+
+.story-text h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.story-text p{
+font-size:18px;
+opacity:0.8;
+}
+
+.story-img img{
+width:400px;
+border-radius:12px;
+}
+
+/* DARK MODE SAFE */
+body.dark .story{
+background:#020617;
+}
